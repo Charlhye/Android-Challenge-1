@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Challenge</string>
+    <string name="app_name">CulturalMX</string>
+    <string name="app_description_main">Encuentra actividades cerca de ti</string>
 </resources>
