@@ -56,6 +56,14 @@ public class ResultsActivity extends AppCompatActivity {
                         Log.d(TAG, results_json.get(i).toString());
                     }*/
                     JSONObject obj = null;
+                    for (int i = 0; i < results_json.length(); i++) {
+                        obj = results_json.getJSONObject(i);
+                        ResultItem resultItem = new ResultItem(obj.getString("title"),
+                                obj.getString("discipline"), obj.getString("venue"), obj.getString("price"),
+                                obj.getString("description"), obj.getString("date"), obj.getString("address"),
+                                obj.getString("url"));
+                        results.add(resultItem);
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
