@@ -16,6 +16,7 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
+import mx.charlhyemartinez.challenge.InformationActivity;
 import mx.charlhyemartinez.challenge.R;
 import mx.charlhyemartinez.challenge.model.ResultItem;
 
@@ -42,7 +43,7 @@ public class ResultItemRecyclerAdapter extends RecyclerView.Adapter<ResultItemRe
             @Override
             public void onClick(View v) {
                 ResultItem resultItem = results.get(resultRecordHolder.getAdapterPosition());
-                Intent it = new Intent(context, null);
+                Intent it = new Intent(context, InformationActivity.class);
                 it.putExtra("activity", resultItem);
                 context.startActivity(it);
             }
