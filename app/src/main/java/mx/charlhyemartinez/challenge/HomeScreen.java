@@ -30,8 +30,8 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void search(View view){
-        Intent intent = new Intent(this, ListaActivity.class); //Aqui va la clase de Martn
-        intent.putExtra("CP", Integer.parseInt(cp.getText().toString()));
+        Intent intent = new Intent(this, ResultsActivity.class); //Aqui va la clase de Martn
+        intent.putExtra("code", cp.getText().toString());
         startActivityForResult(intent, 500);
     }
 }
