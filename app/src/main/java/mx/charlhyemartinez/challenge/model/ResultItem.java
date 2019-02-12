@@ -79,4 +79,8 @@ public class ResultItem implements Serializable {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public String toString() {
+        return this.title + ", " + this.venue + ", " + this.price;
+    }
 }

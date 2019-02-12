@@ -23,15 +23,20 @@ public class HomeScreen extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 500 && resultCode == RESULT_CANCELED){
-            Toast.makeText(this, "EL CÓDIGO POSTAL NO ES VÁLIDO",Toast.LENGTH_LONG).show();
-        }
+        if(data != null)
+            if(requestCode == 500 & resultCode == RESULT_CANCELED & data.getStringExtra("failed").equals("yes")){
+                Toast.makeText(this, "NO SE ENCONTRARON RESULTADOS PARA ESE CÓDIGO POSTAL",Toast.LENGTH_LONG).show();
+            }
 
     }
 
     public void search(View view){
-        Intent intent = new Intent(this, ResultsActivity.class); //Aqui va la clase de Martn
-        intent.putExtra("code", cp.getText().toString());
-        startActivityForResult(intent, 500);
+        if(cp.getText().toString().length() != 5){
+            Toast.makeText(this, "EL CODIGO POSTAL NO ES VALIDO",Toast.LENGTH_LONG).show();
+        }else {
+            Intent intent = new Intent(this, ResultsActivity.class); //Aqui va la clase de Martn
+            intent.putExtra("code", cp.getText().toString());
+            startActivityForResult(intent, 500);
+        }
     }
 }
