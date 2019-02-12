@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent = new Intent( MainActivity.this, ResultsActivity.class  );
+                intent.putExtra("code", "06000");
                 startActivity(intent); // Go, go, go
                 finish(); // kill this activity
             }

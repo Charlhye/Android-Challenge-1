@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -30,6 +31,8 @@ public class ResultsActivity extends AppCompatActivity {
     private List<ResultItem> results;
     private RecyclerView recyclerView;
 
+    public static final String TAG = "RESULTS";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +52,9 @@ public class ResultsActivity extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 try {
                     JSONArray results_json = response.getJSONArray("activities");
+                    /*for (int i = 0; i < results_json.length(); i++) {
+                        Log.d(TAG, results_json.get(i).toString());
+                    }*/
                     JSONObject obj = null;
                 } catch (JSONException e) {
                     e.printStackTrace();
