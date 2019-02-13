@@ -3,9 +3,9 @@ package mx.charlhyemartinez.challenge.model;
 import java.io.Serializable;
 
 public class ResultItem implements Serializable {
-    private String title, discipline, venue, price, description, date, address, url;
+    private String title, discipline, venue, price, description, date, address, url, img;
 
-    public ResultItem(String title, String discipline, String venue, String price, String description, String date, String address, String url) {
+    public ResultItem(String title, String discipline, String venue, String price, String description, String date, String address, String url, String img) {
         this.title = title;
         this.discipline = discipline;
         this.venue = venue;
@@ -14,6 +14,15 @@ public class ResultItem implements Serializable {
         this.date = date;
         this.address = address;
         this.url = url;
+        this.img = img;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getUrl() {
