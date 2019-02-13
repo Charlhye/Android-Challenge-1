@@ -65,7 +65,7 @@ public class ResultsActivity extends AppCompatActivity {
                             ResultItem resultItem = new ResultItem(obj.getString("title"),
                                     obj.getString("discipline"), obj.getString("venue"), obj.getString("price"),
                                     obj.getString("description"), obj.getString("date"), obj.getString("address"),
-                                    obj.getString("url"), obj.getString("url"));
+                                    obj.getString("url"), obj.getString("img"));
                             Log.d(TAG, resultItem.toString());
                             results.add(resultItem);
                         }
